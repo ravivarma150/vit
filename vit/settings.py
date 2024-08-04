@@ -81,14 +81,11 @@ WSGI_APPLICATION = 'vit.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'vit',
-        'USER': 'root',
-        'PASSWORD': 'Ravi@2000',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',  # Use SQLite as the database engine
+        'NAME': BASE_DIR / "db.sqlite3",         # Path to the SQLite database file
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
