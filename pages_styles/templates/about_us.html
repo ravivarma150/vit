@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="container" style="background-color: aliceblue;">
+    <h2>About Us</h2>
+    <br>
+    <p>Varma Institute of Tech Solutions is dedicated to delivering high-quality education and training in the latest technologies. our mission is to bridge the gap between academic learning and real-world application. Our institute offers a range of courses designed to equip students with the skills they need to excel in their careers.</p>
+    <img src="{% static 'images/mission.jpg' %}" alt="About Us Banner" class="img-fluid mb-4">
+    
+
+    <h3>Our Mission</h3>
+    <ul>
+        <li><strong>Empower Students:</strong> To provide students with the knowledge and skills required to succeed in the ever-evolving tech industry.</li>
+        <li><strong>Innovate Learning:</strong> To continually innovate our teaching methods and course content to stay ahead of industry trends.</li>
+        <li><strong>Foster Growth:</strong> To create an environment that fosters personal and professional growth for our students and staff.</li>
+    </ul>
+
+    <h3>Our Vision</h3>
+    <ul>
+        <li><strong>Leaders in Tech Education:</strong> To be recognized as a leading institution in tech education, known for our cutting-edge curriculum and exceptional faculty.</li>
+        <li><strong>Global Reach:</strong> To expand our reach globally, providing access to top-notch education to students around the world.</li>
+        <li><strong>Community Impact:</strong> To positively impact our local and global communities through education and innovation.</li>
+    </ul>
+
+    <h3>Our Values</h3>
+    <ul>
+        <li><strong>Excellence:</strong> We strive for excellence in everything we do, from our curriculum to our customer service.</li>
+        <li><strong>Integrity:</strong> We operate with integrity and transparency in all our interactions.</li>
+        <li><strong>Collaboration:</strong> We believe in the power of collaboration and teamwork to achieve great results.</li>
+    </ul>
+<br><br><br>
+    <h3>Meet Our Team</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{% static 'images/founder.jpg' %}" alt="Founder" class="img-fluid">
+            <h5>Founder & CEO - Niranjan Batana</h5>
+            <p>With over 6 years of experience in the tech industry, Niranjan Batana leads the institute with a vision for excellence and innovation.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/academic_officer.jpg' %}" alt="Academic Officer" class="img-fluid">
+            <h5>Chief Academic Officer - Kiran Darapu</h5>
+            <p>Kiran Darapu ensures our curriculum is up-to-date and relevant, bringing their extensive experience in education and technology.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/admissions_director.jpg' %}" alt="Admissions Director" class="img-fluid">
+            <h5>Director of Admissions - Ravivarma</h5>
+            <p>Ravivarma is dedicated to helping prospective students navigate the admissions process and find the right programs for their goals.</p>
+        </div>
+    </div>
+<br><br>
+    <h3>Our Courses</h3>
+    <ul>
+        <li><strong>Python Programming:</strong> Dive into Python, one of the most versatile and widely-used programming languages in the industry.</li>
+        <li><strong>Machine Learning:</strong> Learn the fundamentals and advanced techniques of machine learning to develop intelligent systems.</li>
+        <li><strong>Selenium Testing:</strong> Master the art of automated testing with Selenium to ensure software quality and reliability.</li>
+        <li><strong>Computer Vision:</strong> Explore the world of computer vision and learn how to develop applications that can interpret and understand visual data.</li>
+    </ul>
+
+    <h3>Why Choose Us?</h3>
+    <ul>
+        <li><strong>Expert Faculty:</strong> Our instructors are industry experts with extensive experience and a passion for teaching.</li>
+        <li><strong>Comprehensive Curriculum:</strong> Our courses are designed to provide in-depth knowledge and practical skills.</li>
+        <li><strong>State-of-the-Art Facilities:</strong> Our campus is equipped with modern labs and resources to support your learning.</li>
+        <li><strong>Career Support:</strong> We offer robust career services to help you land your dream job after graduation.</li>
+    </ul>
+<br><br>
+    <h3>Contact Us</h3>
+    <p>Phone: <a href="tel:04023746666">8790035765</a></p>
+    <p>Email: <a href="mailto:info@varma.com">info@varma.com</a></p>
+    <p>Call/Whatsapp: <a href="tel:+918790035765">+91 8790035765</a></p>
+    
+    <p>Head Office: 2nd Floor, Praksh Nagar,Beside Metro Station, Hyderabad, 500016.</p>
+</div>
+{% endblock %}

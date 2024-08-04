@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Computer Vision Course{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Computer Vision Course</h2>
+    <p class="text-center">Details about the Computer Vision course.</p>
+
+    <div class="row mt-4">
+        <!-- Image Section -->
+        <div class="col-md-6">
+            <img src="{% static 'images/computer_vision1.jpg' %}" class="img-fluid rounded" alt="Computer Vision " style="height:80%;">
+        </div>
+
+        <!-- Course Details Section -->
+        <div class="col-md-6">
+            <h3>About the Course</h3>
+            <p>Computer Vision is a field of artificial intelligence that trains computers to interpret and understand the visual world. This course is designed for those who want to learn how to develop applications that can process, analyze, and understand images and videos.</p>
+            <h4>Course Highlights</h4>
+            <ul>
+                <li>Introduction to Computer Vision and its applications</li>
+                <li>Image Processing fundamentals</li>
+                <li>Feature detection and matching</li>
+                <li>Object detection and recognition using CNNs</li>
+                <li>Deep learning for Computer Vision</li>
+                <li>Video analysis and tracking</li>
+                <li>Introduction to OpenCV and other CV libraries</li>
+                <li>Projects and hands-on experience</li>
+            </ul>
+            <p>Enroll in this course to gain practical experience and enhance your skills in Computer Vision.</p>
+        </div>
+    </div>
+
+    
+</div>
+{% endblock %}

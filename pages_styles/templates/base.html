@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Varma Institute of Tech Solutions{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="{% static 'static/styles.css' %}"> -->
+    <style>
+        .navbar-brand img {
+            width: 100px; /* Adjust the width as needed */
+            height: auto;
+            padding: 3px;
+        }
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .header-info h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .header-info p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 576px) {
+            .header-info h1 {
+                font-size: 1.2rem;
+            }
+            .header-info p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-dark text-white p-2">
+        <div class="container header-info">
+            <div>
+                <h1 class="h4">Varma Institute of Tech Solutions</h1>
+            </div>
+            <div>
+                <p>Phone: 123-456-7890 | Email: info@varmainstitute.com</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logoPNG.png' %}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'course_drop' %}" id="coursesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Courses
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="coursesDropdown">
+                            {% for course in courses %}
+                                <a class="dropdown-item" href="{% url 'courses' course.pk %}">{{ course.course_name }}</a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'mini_projects' %}">Mini Projects</a>
+                    </li>
+
+                    {% if not request.user.is_authenticated %}
+
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="{% url 'login' %}">Login</a>
+                    </li> &nbsp;&nbsp;
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="{% url 'logout' %}">LogOut</a>
+                    </li> &nbsp;&nbsp;
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="{% url 'enroll' %}">Enroll Here</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="{% url 'course_search' %}" method="get">
+                    <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <main class="container mt-4">
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+<footer class="bg-dark text-white text-center p-2 mt-4">
+    <div class="container">
+        <div class="row align-items-start">
+            <!-- Logo Section -->
+            <div class="col-md-2 text-md-left mb-3">
+                <img src="{% static 'images/logoPNG.png' %}" alt="Logo" class="img-fluid" style="max-width: 100%; height: auto;">
+            </div>
+            <!-- Company Links Section -->
+            <div class="col-md-2 text-md-left mb-3">
+                <h5>Company</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'home' %}" class="text-white">Home</a></li>
+                    <li><a href="{% url 'about_us' %}" class="text-white">About Us</a></li>
+                    <li><a href="{% url 'contact' %}" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Services Links Section -->
+            <div class="col-md-2 text-md-left mb-3">
+                <h5>Services</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Web Development</a></li>
+                    <li><a href="#" class="text-white">Mobile App Development</a></li>
+                    <li><a href="#" class="text-white">Digital Marketing</a></li>
+                    <li><a href="#" class="text-white">Data Science</a></li>
+                </ul>
+            </div>
+            <!-- Courses Links Section -->
+            <div class="col-md-3 text-md-left mb-3">
+                <h5>Courses</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Python</a></li>
+                    <li><a href="#" class="text-white">Java</a></li>
+                    <li><a href="#" class="text-white">Django Framework</a></li>
+                    <li><a href="#" class="text-white">Testing Tools</a></li>
+                    <li><a href="#" class="text-white">Machine Learning</a></li>
+                    <li><a href="#" class="text-white">Artificial Intelligence</a></li>
+                    <li><a href="#" class="text-white">Data Analyst</a></li>
+                    <li><a href="#" class="text-white">Computer Vision</a></li>
+                    <li><a href="#" class="text-white">HTML & CSS</a></li>
+                    <li><a href="#" class="text-white">JavaScript</a></li>
+                </ul>
+            </div>
+            <!-- Contact Information Section -->
+            <div class="col-md-3 text-md-left mb-3">
+                <h5>Reach Us</h5>
+                <p>Phone: <a href="tel:04023746666" class="text-white">040-23746666</a></p>
+                <p>Email: <a href="mailto:info@varmasoft.com" class="text-white">info@varmasoft.com</a></p>
+                <p>Call/Whatsapp: <a href="tel:+918179191999" class="text-white">+91 123456789</a></p>
+                <p>International: 
+                    <a href="tel:+14042329879" class="text-white">+1 404-232-9879</a>, 
+                </p>
+            </div>
+        </div>
+        <hr class="my-2">
+        <div class="text-center">
+            <p class="mb-1">&copy; 2024 Varma Institute of Tech Solutions. All rights reserved.</p>
+            <p class="mb-0">Follow us on:
+                <a href="#" class="text-white">Facebook</a> |
+                <a href="#" class="text-white">Twitter</a> |
+                <a href="#" class="text-white">LinkedIn</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

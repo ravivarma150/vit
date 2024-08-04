@@ -1,0 +1,53 @@
+<!-- main/templates/main/course_page.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+{{ course.course_name }} | Varma Institute of Tech Solutions
+{% endblock %}
+
+{% block content %}
+{% for course in course %}
+<div class="container">
+    <h1>{{ course.course_name }}</h1>
+    <div class="description">
+        {{ course.description|safe }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block extra_styles %}
+<style>
+    .container {
+        margin-top: 20px;
+    }
+    .description img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .description h3, .description h4, .description ul {
+        margin-top: 20px;
+    }
+    .description {
+        text-align: justify;
+    }
+    @media (max-width: 768px) {
+        .description h1 {
+            font-size: 1.5rem;
+        }
+        .description h3 {
+            font-size: 1.2rem;
+        }
+        .description h4 {
+            font-size: 1rem;
+        }
+        .description p, .description li {
+            font-size: 0.9rem;
+        }
+    }
+    
+</style>
+{% endblock %}

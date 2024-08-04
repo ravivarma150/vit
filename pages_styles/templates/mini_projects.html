@@ -1,0 +1,132 @@
+{% extends 'base.html '%}
+{% load static %}
+{% block title %}
+
+Mini Projects for college students 
+{% endblock %}
+
+{% block content %}
+<style>
+    .section-header {
+        font-size: 2em;
+        margin-top: 40px;
+        text-align: center;
+    }
+    .intro, .content-section {
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
+    .project-section {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+    }
+    .project-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .project-title {
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
+    .project-description {
+        font-size: 1.1em;
+        margin-top: 10px;
+    }
+    .emoji {
+        font-size: 1.5em;
+        margin-right: 5px;
+    }
+</style>
+</head>
+<body>
+<div class="container" style="background-color: aliceblue;">
+    <h1 class="text-center mt-5">Real-Time Projects and Training</h1>
+
+    <div class="intro">
+        <p>
+           <h3 >Learn by Doing :</h3><h5>Real-World Projects for Practical Mastery </h5>
+            <br>
+            At our cutting-edge software training institute, we specialize in offering real-time projects that immerse learners in the dynamic world of IT technologies. Our courses are designed to mirror real-world scenarios encountered in the IT industry, ensuring a practical and hands-on learning experience. The software courses we provide are carefully crafted to equip learners with the skills demanded by the ever-evolving industry.
+        </p>
+        <p>
+            In addition to theoretical knowledge, our institute emphasizes hands-on projects, allowing students to apply what they've learned in a tangible, real-world context. Our state-of-the-art lab facility provides the perfect environment for learners to experiment and hone their skills. As part of our commitment to your success, we offer dedicated mentor support, guiding you through the challenges of real-world problems encountered in the IT industry.
+        </p>
+        <p>
+            <strong>Key Features of Our Software Training Institute:</strong>
+            <ul>
+                <li>Real-time projects provide practical exposure to IT technologies.</li>
+                <li>Courses are structured around real-world scenarios prevalent in the IT industry.</li>
+                <li>Comprehensive software courses address the latest industry demands.</li>
+                <li>Hands-on projects enable the application of theoretical knowledge.</li>
+                <li>State-of-the-art lab facility for practical experimentation.</li>
+                <li>Mentor support to navigate and overcome real-world challenges in the IT domain.</li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="section-header">Explore Our Projects</div>
+    <p class="content-section">
+        Our institute not only provides training but also collaborates with colleges and clients to develop and execute a range of projects. We also offer specialized coaching for students and job seekers to prepare them for real-world challenges and opportunities.
+    </p>
+
+    <div class="project-section">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'images/student_project.jpg' %}" alt="Student Collaboration" class="project-img">
+            </div>
+            <div class="col-md-8">
+                <h2 class="project-title">Student Collaboration Projects <span class="emoji">🤝</span></h2>
+                <p class="project-description">
+                    We collaborate with educational institutions to provide students with hands-on project experience. These projects are designed to complement their academic learning and give them a taste of real-world IT challenges.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static  'images/client_project.jpg' %}" alt="Client-Based Projects" class="project-img">
+            </div>
+            <div class="col-md-8">
+                <h2 class="project-title">Client-Based Projects <span class="emoji">💼</span></h2>
+                <p class="project-description">
+                    Our institute takes on client-based projects, giving learners the opportunity to work on real client requirements. This experience is invaluable in preparing them for future employment and building a professional portfolio.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'images/job_training.jpg' %}" alt="Job Seeker Training" class="project-img">
+            </div>
+            <div class="col-md-8">
+                <h2 class="project-title">Job Seeker Training <span class="emoji">🎓</span></h2>
+                <p class="project-description">
+                    We offer specialized training programs for job seekers to help them acquire the skills needed to excel in the IT industry. Our programs include resume building, interview preparation, and hands-on projects to enhance their employability.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'images/vision.jpg' %}" alt="Comprehensive Coaching" class="project-img">
+            </div>
+            <div class="col-md-8">
+                <h2 class="project-title">Comprehensive Coaching <span class="emoji">📚</span></h2>
+                <p class="project-description">
+                    Our comprehensive coaching programs are tailored to meet the needs of learners at all levels. Whether you are a student looking to enhance your skills or a job seeker preparing for your next role, we have the right program for you.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

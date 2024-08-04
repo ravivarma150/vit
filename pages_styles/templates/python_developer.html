@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Python Course{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Python Programming Course</h2>
+    
+    <div class="row mt-4">
+        <!-- Image Section -->
+        <div class="col-md-6">
+            <img src="{% static 'images/python1.jpg' %}" class="img-fluid rounded" alt="Python Programming">
+        </div>
+        
+        <!-- Course Details Section -->
+        <div class="col-md-6">
+            <h3>About the Course</h3>
+            <p>Python is a high-level, interpreted programming language known for its simplicity and readability. This course is designed for beginners and professionals who want to learn Python programming for various applications, including web development, data analysis, artificial intelligence, and more.</p>
+            <h4>Course Highlights</h4>
+            <ul>
+                <li>Introduction to Python and its features</li>
+                <li>Data types, variables, and control structures</li>
+                <li>Functions, modules, and packages</li>
+                <li>Working with files and exception handling</li>
+                <li>Basics of Object-Oriented Programming (OOP)</li>
+                <li>Introduction to web frameworks like Django and Flask</li>
+                <li>Data analysis with Pandas and NumPy</li>
+            </ul>
+            <p>Join us to gain hands-on experience and enhance your programming skills with Python.</p>
+        </div>
+    </div>
+    
+   
+</div>
+{% endblock %}

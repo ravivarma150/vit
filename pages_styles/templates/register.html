@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Register
+{% endblock title %}
+
+{% block content %}
+<style>
+    #hero {
+        background-image: url("{% static 'images/register.jpg' %}"); /* Update with the correct path */
+        background-size: cover; /* Cover the entire section */
+        background-position: center; /* Center the background image */
+        height: 80vh; /* Full height of the viewport */
+        display: flex;
+        align-items: center; /* Center content vertically */
+        justify-content: center; /* Center content horizontally */
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+        padding: 40px; /* Padding for spacing */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        width: 100%; /* Full width */
+        max-width: 400px; /* Limit width */
+        text-align: center; /* Center text inside the card */
+    }
+
+    .title {
+        color: rgb(29, 143, 219);
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    button {
+        font-size: 20px;
+        margin-top: 20px; /* Space above the button */
+    }
+
+    h5 {
+        color: orange;
+        margin-top: 20px;
+    }
+
+    h5 a {
+        color: green;
+        font-size: 30px;
+    }
+
+    h5 a:hover {
+        color: blue;
+    }
+</style>
+
+<section id="hero">
+    <div class="card">
+        {% for message in messages %}
+            <div class="alert alert-warning">{{ message }}</div>
+        {% endfor %}
+        <h3 class="title" style="font-family:  'Arial Narrow Bold', sans-serif;">Register</h3>
+        <form action="{% url 'register' %}" method="post">  <!-- Change the action to the correct URL -->
+            {% csrf_token %}
+            <div>
+                <input type="text" name="username" placeholder="Enter username" required><br><br>
+            </div>
+            <div>
+                <input type="email" name="email" placeholder="Enter email" required><br><br>
+            </div>
+            <div>
+                <input type="password" name="pass1" placeholder="Enter password ex:123456" required><br><br>
+            </div>
+            <div>
+                <input type="password" name="pass2" placeholder="Re-enter password" required><br><br>
+            </div>
+            <button type="submit" name="signup">Register</button>
+        </form>
+        <p class="mt-3">Already Register <a href="{% url 'login' %}">Login Here</a></p>
+        <p class="mt-3">Forgot Password <a href="{% url 'password_reset' %}">Click Here</a></p>
+    </div>
+</section>
+
+{% endblock content %}

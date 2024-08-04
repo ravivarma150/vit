@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+<div class="container" style="background-color: rgb(190, 215, 236);">
+    <h2>Contact Us</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Get In Touch</h4>
+            <p style="font-family: Georgia, 'Times New Roman', Times, serif;">If you have any questions or need more information, feel free to reach out to us through the form below or by using the contact details provided.</p>
+            <ul class="list-unstyled">
+                <li><strong>Phone:</strong> <a href="tel:04023746666">040-23746666</a></li>
+                <li><strong>Email:</strong> <a href="mailto:info@nareshit.com">info@varma.com</a></li>
+                <li><strong>Call/Whatsapp:</strong> <a href="tel:+918179191999">+91 8790035765</a></li>
+               
+                <li><strong>Address:<br></strong>2nd Floor ,Praksh Nagar,Beside Metro Station, Hyderabad, 500016.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4>Contact Form</h4>
+            {% if messages %}
+            <div class="alert alert-success">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="5" name="message" placeholder="Your message here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <div class="text-center">
+        <h4 class="mt-4">Our Location</h4>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.320659880548!2d78.47326361432922!3d17.42216888808417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad3c8023b2e1d5%3A0xa2f7380b1428d635!2sPrakash%20Nagar%2C%20Hyderabad%2C%20Telangana%20500016!5e0!3m2!1sen!2sin!4v1658895094676!5m2!1sen!2sin"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    
+</div>
+
+
+{% endblock %}
